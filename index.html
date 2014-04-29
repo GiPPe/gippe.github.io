@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" charset="utf-8">
+    window.madvertise_ad_params = {
+        site: 'TestTokn',
+        bannerdiv: 'ad_container',
+        debug: true,
+        trace: true,
+        banner_type: '300x50',
+        on : {
+            success : function() {
+                alert('success')
+                // insert your own code here
+            },
+            no_ad_available: function() {
+                alert('no ad')
+                // insert your own code here
+            },
+            error : function() {
+                alert('error')
+                // insert your own code here
+            }
+        }
+    }
+
+    $(document).ready(function() { $.getScript("http://ad.eu1.lqm.io/show_ad.js") });
+</script>
+
+<!-- An ad will be displayed in the below 'div' tag, as configured with 'madvertise_ad_params.bannerdiv' parameter -->
+<div id="ad_container"></div>
+
+</body>
+</html>
