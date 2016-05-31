@@ -1,35 +1,46 @@
 <html>
 <body>
+<script type="text/javascript">
+var CreativeJsLibrary = function () {
+    this.SCREEN_SIZE = this.USER_AGENT = this.PAGE_URL = this.TIME = this.TIME_ZONE = null;
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" charset="utf-8">
-    window.madvertise_ad_params = {
-        site: 'g7jtNEMc',
-        bannerdiv: 'ad_container',
-        debug: true,
-        trace: true,
-        banner_type: 'interstitial',
-        on : {
-            success : function() {
-                alert('success')
-                // insert your own code here
-            },
-            no_ad_available: function() {
-                alert('no ad')
-                // insert your own code here
-            },
-            error : function() {
-                alert('error')
-                // insert your own code here
-            }
-        }
-    }
+    /* user-defined variables */
+    this.CAMPAIGN           = decodeURIComponent("{CAMPAIGN}");
+    this.CREATIVE           = decodeURIComponent("{CREATIVE}");
+    this.PUBLISHER_ID       = decodeURIComponent("{PUBLISHER_ID}");
+    this.DEVICE_ID          = decodeURIComponent("{DEVICE_ID}");
+    this.APP_NAME           = decodeURIComponent("{APP_NAME}");
+    this.EXCHANGE_NAME      = decodeURIComponent("{EXCHANGE_NAME}");
+    this.MANUFACTURER_NAME  = decodeURIComponent("{MANUFACTURER_NAME}");
+    this.MODEL_NAME         = decodeURIComponent("{MODEL_NAME}");
+    this.DEVICE_OS_NAME     = decodeURIComponent("{DEVICE_OS_NAME}");
+    this.COUNTRY_NAME       = decodeURIComponent("{COUNTRY_NAME}");
+    this.STATE_NAME         = decodeURIComponent("{STATE_NAME}");
+    this.GPS_LAT            = parseFloat("{GPS_LAT}")||0;
+    this.GPS_LON            = parseFloat("{GPS_LON}")||0;
+    this.APP_ID             = decodeURIComponent("{APP_ID}");
+    this.DEVICE_PLATFORM_ID = decodeURIComponent("{DEVICE_PLATFORM_ID}");
+    this.CARRIER_NAME       = decodeURIComponent("{CARRIER_NAME}");
+    this.CLICK_URL          = decodeURIComponent("{CLICK_URL}");
+    this.BID_ID           = decodeURIComponent("{CONVERSION_ID}");
 
-    $(document).ready(function() { $.getScript("http://gippe.dev.lqm.io:1142/show_ad.js") });
+    /* click-related variables */
+    this.LOAD_TIME_ELAPSED = this.PARAM = null;
+
+    this.BACKUP_IMAGE = "https://datamonk-test.s3.amazonaws.com/1_large.jpg";
+    this.BACKUP_URL = "http://www.flipkart.com/offers/electronics-sale";
+
+    /* ajax request urls */
+    this.AJAX_URL = "http://labs-tracker-staging.us-east-1.elasticbeanstalk.com/impression";
+    this.AJAX_CLICK_URL = "http://labs-tracker-staging.us-east-1.elasticbeanstalk.com/click";
+
+    /* json data */
+    this.DATA = new Object;
+    this.requestObj = new Object;
+    this.requestObj.partner_id = 6;
+}
 </script>
-
-<!-- An ad will be displayed in the below 'div' tag, as configured with 'madvertise_ad_params.bannerdiv' parameter -->
-<div id="ad_container"></div>
+<script type="text/javascript" src="http://drp-staging.applift.com/scripts/dco.js"></script>
 
 </body>
 </html>
